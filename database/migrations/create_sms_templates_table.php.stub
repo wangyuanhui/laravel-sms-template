@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateSmsTemplatesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        if (Schema::hasTable('sms_templates')) {
+            Schema::drop('sms_templates');
+        }
+        Schema::create('sms_templates', function (Blueprint $table) {
+            $table->increments('id');
+            $table->char('title')->nullable(false)->unique();
+            $table->text('content')->nullable()->default(null);
+            $table->char('language')->nullable(false);
+            $table->char('group')->nullable(false);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('sms_templates');
+    }
+}

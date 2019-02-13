@@ -1,0 +1,35 @@
+{
+    "name": "wangyuanhui/sms-template",
+    "description": "Sms Template for Laravel 5.1 and up",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yuanhui Wang",
+            "email": "wangyuanhui688@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "~5.1",
+        "illuminate/database": "~5.1",
+        "illuminate/routing": "~5.1",
+        "illuminate/config": "~5.1",
+        "illuminate/http": "~5.1"
+    },
+    "autoload": {
+		"psr-4": {
+			"Wangyuanhui\\SmsTemplate\\": "src/"
+		}
+    },
+    "extra": {
+		"laravel": {
+			"providers": [
+				"Wangyuanhui\\SmsTemplate\\SmsTemplateServiceProvider"
+			],
+			"aliases": {
+				"SmsTemplate": "Wangyuanhui\\SmsTemplate\\Facades\\SmsTemplate"
+			}
+		}
+	}
+}
