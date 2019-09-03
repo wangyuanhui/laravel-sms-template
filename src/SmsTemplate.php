@@ -110,7 +110,7 @@ class SmsTemplate
                 return $this->getByTitle($key);
             }
         }
-        if (count($key == 2)) {
+        if (count($key) == 2) {
             if (is_string($key[0]) && is_string($key[1])) {
                 $group = $key[0];
                 $language = $key[1];
